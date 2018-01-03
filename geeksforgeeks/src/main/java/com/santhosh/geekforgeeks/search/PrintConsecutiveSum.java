@@ -3,19 +3,25 @@ package com.santhosh.geekforgeeks.search;
 public class PrintConsecutiveSum {
 	
 	public static void printConsecutiveSum(int start,int end,int desiredSum) {
-		int sum=0;
-		for(int i=start;i<end;i++) {
-			sum=i;
-			for(int j=i+1;sum<desiredSum;j++) {
+	    
+		for(int i=start,sum=i,j=i+1;i<end;) {
+			for(;sum<desiredSum && j<end+1;j++) {
 				sum=sum+j;
 				if(sum==desiredSum) {
 					for(int k=i;k<=j;k++) {
-						System.out.print(k+" ");	
-						
+						System.out.print(k+" ");		
 					}
 					System.out.println();
 					break;
 				}
+			}
+			sum=sum-i;
+			i++;
+			if(sum==desiredSum) {
+				for(int k=i;k<=j-1;k++) {
+					System.out.print(k+" ");		
+				}
+				System.out.println();
 			}
 		}
 	}
