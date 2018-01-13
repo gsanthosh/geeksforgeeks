@@ -11,10 +11,11 @@ import java.util.Scanner;
  */
 public class RearrangeZerosOnesTwos {
 
-	public void rearrangeArray(int[] input) {
+	public int[] rearrangeArray(int[] input) {
 		int lo=0;
+		int i=0;
 		int high=input.length-1;
-		for(int i=0;i<=high;i++) {
+		while(i<=high) {
 			switch(input[i]) {
 			case 0:
 				input[i]=input[lo];
@@ -34,6 +35,7 @@ public class RearrangeZerosOnesTwos {
 			}
 			
 		}
+		return input;
 	}
 	
 	/**
@@ -49,8 +51,7 @@ public class RearrangeZerosOnesTwos {
 		for(int j=0;j<numElements;j++) {
 			input[j]=scanner.nextInt();
 		}
-		System.out.println();
-		rearrange.rearrangeArray(input);
+		input=rearrange.rearrangeArray(input);
 		for(int k=0;k<input.length;k++) {
 			System.out.print(input[k]);
 		}

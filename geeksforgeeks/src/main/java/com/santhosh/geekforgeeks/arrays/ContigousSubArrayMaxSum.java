@@ -3,7 +3,7 @@ package com.santhosh.geekforgeeks.arrays;
 import java.util.Scanner;
 
 /**
- * Follow Kadane's algorithm
+ * Follow Kadane
  * Given an array containing both negative and positive integers. Find the contiguous sub-array with maximum sum.
  
 Input:
